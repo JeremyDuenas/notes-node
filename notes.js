@@ -12,9 +12,14 @@ var readNote = (title) => {
   console.log('Reading', title);
 };
 
+var removeNote = (title) => {
+  console.log('Removing Note', title);
+}
+
 module.exports = {
   addNote: addNote,
   //addNote
   getAll: getAll,
-  readNote: readNote
+  readNote: readNote,
+  removeNote
 }
