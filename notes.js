@@ -43,9 +43,18 @@ var getAll = () => {
 
 var readNote = (title) => {
   console.log('Reading', title);
+
 };
 
 var removeNote = (title) => {
+  // get notes
+  var notes = fetchNotes(title);
+  //filter notes, remove note with same title as argv
+  var filteredNotes = notes.filter((note) => note.title!== title);
+  saveNotes(filteredNotes);
+
+  return notes.length !== filter(filteredNotes.length)
+
   console.log('Removing Note', title);
 }
 
