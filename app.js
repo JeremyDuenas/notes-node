@@ -28,11 +28,17 @@ else if (command === 'list'){
   notes.getAll();
 }
 else if (command === 'read'){
-  notes.readNote(argv.title);
+  var note = notes.readNote(argv.title);
+  if (note){
+    console.log('Note found');
+
+  } else{
+    console.log('Note not found');
+  }
 }
 else if (command === 'remove'){
   var noteRemoved = notes.removeNote(argv.title);
-  var message = noteRemoved ? 'Note was removed' : 'Not was not removed'
+  var message = noteRemoved ? 'Note was removed' : 'Not was not removed';
   console.log(message);
 }
 else {
